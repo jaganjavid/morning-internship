@@ -55,7 +55,7 @@ header {
 .rating {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 30px 0 40px;
 }
 
@@ -157,7 +157,7 @@ input:focus {
 }
 
 .btn-primary {
-  background-color: #202142;
+  background-color: #24523c;
 }
 
 .btn-secondary {

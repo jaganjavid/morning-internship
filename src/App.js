@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 
 import Header from './components/Header';
 import FeedbackList from './components/FeedbackList';
+import FeedbackStats from './components/FeedbackStats';
+import FeedbackForm from './components/FeedbackForm';
+
+import { FeedbackProvider } from './context/FeedbackContext';
 
 const App = () => {
 
@@ -23,13 +27,21 @@ const App = () => {
     },
   ])
 
+
+  const addFeedback = (newFeedback) => {
+    console.log(newFeedback);
+    setFeedback([...feedback, newFeedback])
+  }
+
   return (
-    <div className='App'>
+    <FeedbackProvider>
        <Header/>
        <div className="container">
-           <FeedbackList feedback={feedback}/>
+           <FeedbackForm addFeedback={addFeedback}/>
+           <FeedbackStats/>
+           <FeedbackList/>
        </div>
-    </div>
+    </FeedbackProvider>
   )
 }
 

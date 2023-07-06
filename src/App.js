@@ -27,17 +27,11 @@ const App = () => {
     },
   ])
 
-
-  const addFeedback = (newFeedback) => {
-    console.log(newFeedback);
-    setFeedback([...feedback, newFeedback])
-  }
-
   return (
     <FeedbackProvider>
        <Header/>
        <div className="container">
-           <FeedbackForm addFeedback={addFeedback}/>
+           <FeedbackForm/>
            <FeedbackStats/>
            <FeedbackList/>
        </div>
